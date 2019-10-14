@@ -9,3 +9,5 @@
 #relatif
 *.exe
 *.o
+*.depend
+*.layout
