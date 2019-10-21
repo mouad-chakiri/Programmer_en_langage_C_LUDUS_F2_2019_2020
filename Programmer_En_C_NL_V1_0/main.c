@@ -2,91 +2,112 @@
 #include <stdlib.h>
 #include <math.h>
 
-#define NFOIS 5 //constante
-#define PI 3.14
-#define NOM "Lehmann"
-#define CAR 'x'
+#define TAILLE 10
 
-//Exemple de programme en C
+//Strcutures Conditions et boucles
 
-//Commentaires lignes
 
-/* Commentaires paragraphes*/
 
 int main()
 {
-    //Integer
-    short int nA; //short sn
-    int nB;
-    long int nC; //long ln
+
+    int a=0,b=0,c=0, d=0;
+
+    //Condition
+
+    if(a==b){
+        printf("Ils sont egaux\n");
+    }else{
+        printf("Ils sont diff\n");
+    }
+
+    //Condition avec operateurs logiques
+
+    if((a==b) && (a==c)){
+        printf("Ils sont tous egaux\n");
+
+    }else{
+        printf("Ils sont différents\n");
+    }
 
 
-    printf("Taille de a : %d\n",sizeof(nA));
-    printf("Taille de b : %d\n",sizeof(nB));
-    printf("Taille de c : %d\n",sizeof(nC));
+    if((a==b) || (a==c)){
+        printf("Ils sont egaux\n");
+    }else{
+        printf("Ils sont diff\n");
+    }
+
+    if((a==b) || (a==c)){
+        printf("Ils sont egaux\n");
+    }else if((a==c)&& (a!=d)){
+        printf("blabla...\n");
+    }
 
 
-    //Real
-    float fltReelSimple;
-    double dblReelDouble;
-    long double ldblReel=10.2580;
+    //Boucle
+    int i=0;
 
-     printf("Taille de fltReelSimple : %d\n",sizeof(fltReelSimple));
-     printf("Taille de dblReelDouble : %d\n",sizeof(dblReelDouble));
-     printf("Taille de ldblReel : %d\n",sizeof(ldblReel));
-     printf("Taille de val de ldblReel : %lf\n",(float)ldblReel);
+    for(i=0;i<TAILLE;i++){
 
+        printf("Hello world\n");
+    }
 
+    //TQ
 
-     //caractères
+    i=0;
+    while(i<TAILLE){
 
-     char cCaractere;
-     printf("Taille de cCaractere : %d\n",sizeof(cCaractere));
+         printf("Hello world\n");
+         i++;
 
+    }
 
-    //Tester Define
-     printf("NFOIS : %d\n",NFOIS);
-     printf("PI : %f\n",PI);
-     printf("NOM : %s\n",NOM);
-     printf("CAR : %c\n",CAR);
+    //Faire TQ
 
-     //Opérateurs
-     int nI=0;
-     ++nI; //pre-incrementation
-     nI++; //post-incremenation
-     // % modulo
-     /*  / division */
-
-     //Cast
-     long double ldblLongDouble=105.8933259635;
-     printf("Val de ldblLongDouble : %lf",(double)ldblLongDouble);
+    i=0;
+    do{
+        printf("Hello world\n");
+        i++;
+    }while(i<TAILLE);
 
 
-     //Operateurs relationnels
-     // >
-     // <
-     // >=
-     // <=
-     // ==
-     // !=
+    //Cas alternatif de la condition
 
-     //Operateurs Logiques
-     // &
-     // &&
-     // |
-     // ||
-     // !
+    int choix=-1;
+
+    printf("Veuillez entrer votre choix\n");
+    scanf("%d",&choix);
+    switch(choix){
+            case 0:printf("Quitter\n");break;
+            case 1:printf("calculer\n");break;
+            case 2:printf("Jouer\n");break;
+            default : printf("default\n");break;
+
+    }
+
+    //test ? instruction1 : instruction 2
+    a==b? printf("Egaux"): printf("Diff");
 
 
-     //Factorisation operateurs
-     // +=
-     // -=
-     // *=
-     // /=
-     // %= ...
+    //Instruction break;
+    for(i=0;i<TAILLE;i++){
+        printf("Hello world\n");
 
-     // nA+=nB  => nA=nA+nB
+        if(i==3){
+            break;
+        }
+    }
 
+  //Instruction continue;
+    for(i=0;i<TAILLE;i++){
+        printf("Hello world\n");
+
+        if(i<3){
+            printf("continue\n");
+            continue;
+
+        }
+    }
 
 
 
