@@ -62,6 +62,30 @@ int main()
      printf("Val de ldblLongDouble : %lf",(double)ldblLongDouble);
 
 
+     //Operateurs relationnels
+     // >
+     // <
+     // >=
+     // <=
+     // ==
+     // !=
+
+     //Operateurs Logiques
+     // &
+     // &&
+     // |
+     // ||
+     // !
+
+
+     //Factorisation operateurs
+     // +=
+     // -=
+     // *=
+     // /=
+     // %= ...
+
+     // nA+=nB  => nA=nA+nB
 
 
 
