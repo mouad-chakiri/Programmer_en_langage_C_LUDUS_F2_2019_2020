@@ -1,146 +1,97 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
+#include <string.h>
 
-#define TAILLE 10
-#define MOT "HELLO"
 
-//Les entrées sorties conversationnelles
+#define TAILLENOM 100
+#define TAILLEPRENOM 100
+#define TAILLEADRESSE 255
+#define TAILLECP 10
+#define TAILLEVILLE 100
+#define TAILLECONTINUE 100
+
+
+//Les tableaux
 
 
 int main()
 {
-    //Exercice 1
 
-    /*int nI, nN, nSom;
+   /* int nTabInteger[TAILLE];
+    float fltTabFloat[TAILLE];
+    double dblTabDouble[TAILLE];
 
-    nSom=0;
-    for(nI=0;nI<4;nI++){
-        printf("Donnez un entier\n");
-        scanf("%d",&nN);
-        nSom+=nN;
-    }
-
-    printf("Somme : %d\n",nSom);*/
-
-   /* nI=0;//nI soit bien = 0
-    while(nI<4){
-        printf("Donnez un entier\n");
-        scanf("%d",&nN);
-        nSom+=nN;
-        nI++; // ne pas oublier l'increment
-    }
-
-    printf("Somme : %d\n",nSom);
+    char cTabCar[TAILLE];*/
 
 
-    nI=0;
-    do{
-        printf("Donnez un entier\n");
-        scanf("%d",&nN);
-        nSom+=nN;
-        nI++;
-    }while(nI<4);
-
-    printf("Somme : %d\n",nSom);*/
-
-
-    //exercice 2
    /* int nI=0;
-    float fltMoyenne;
-    float fltNote;
-    float fltSomNote;
-    do{
 
-        printf("Donnez votre note\n");
-        scanf("%f",&fltNote);
-        if(fltNote>=0.0){
-            fltSomNote+=fltNote;
-            nI++;
-        }
+    for(nI=0;nI<TAILLE;nI++){
+            nTabInteger[nI]=0;
+            fltTabFloat[nI]=0.0;
+            dblTabDouble[nI]=0.0;
+            cTabCar[nI]='\0'; // '\0' caractere de fin de la chaine
 
-    }while(fltNote>=0.0);
-
-    fltMoyenne=fltSomNote/nI;
-
-    printf("Moyenne : %f",fltMoyenne);*/
-
-
-    //Exercice 3
-    /*int nNbl,nI,nJ;
-    printf("Combien de ligne\n");
-    scanf("%d",&nNbl);
-
-    for(nI=0;nI<=nNbl;nI++){
-        for(nJ=0;nJ<=nI;nJ++){
-            printf("*");
-
-        }
-        printf("\n");
     }*/
 
-    //Exercice 4
-    /*int nN, nD;
-    do{
-        printf("donnez un entier superieur a 2\n");
-        scanf("%d",&nN);
-    }while(nN<=2);
+    // TD carte identitite
+    static int nID=0;
+    char cNom[TAILLENOM];
+    char cPrenom[TAILLEPRENOM];
+    char cAdresse[TAILLEADRESSE];
+    char cCP[TAILLECP];
+    char cVille[TAILLEVILLE];
 
-    nD=2;
-    while((nN%nD)&&(nD<=sqrt(nN)))
-           nD++;
 
-    if(nN%nD)
-        printf("%d est premier",nN);
-    else
-        printf("%d est pas premier",nN);
 
-    */
+   const char cFinDeSaisie='o';
+   char cContinue[TAILLECONTINUE];
+   char c='a';
 
-    //Exercice 5
 
-    /*int nU1,nU2,nU3;//Pour parcourir la suite
-    int nN, nI; //rang et compteur
+   do{
 
-    do{
-        printf("rang du terme demande(au moins 3)\n");
-        scanf("%d",&nN);
-    }while(nN<3);
 
-    nU2=nU1=1;//les 2 premiers termes
-    nI=2;
-    while(nI++<nN){ //Attention l'algo ne fonctionne que pour n> 2
+        printf("Programme Carte identite\n");
+        printf("Saisir Nom\n");
+        fgets(cNom,TAILLENOM,stdin);
+        scanf("%c",&c);
+        fflush(stdin);
+        printf("Saisir Prenom\n");
+        fgets(cPrenom,TAILLEPRENOM,stdin);
+        fflush(stdin);
+        printf("Saisir Adresse\n");
+        fgets(cAdresse,TAILLEADRESSE,stdin);
+        fflush(stdin);
+        printf("Saisir Cp\n");
+        //fgets(cCP,TAILLECP,stdin);
+        scanf("%5s",cCP);
+        fflush(stdin);
+        printf("Saisir Ville\n");
+        fgets(cVille,TAILLEVILLE,stdin);
+        ++nID;
 
-        nU3=nU1+nU2;
-        nU1=nU2;
-        nU2=nU3;
-    }
-    printf("Valeur du terme du rang %d:%d",nN,nU3);*/
+        //Affichage
+        printf("Id : %d\n",nID);
+        printf("Nom :%s",cNom);
+        printf("Prenom :%s",cPrenom);
+        printf("Adresse :%s",cAdresse);
+        printf("CP :%s\n",cCP);
+        printf("Ville :%s",cVille);
 
-    //Exercice 6
+        do{
+        printf("Saisir une autre carte o/n ?\n");
+        scanf("%s",cContinue);
+        fflush(stdin);
+        }while(strcmp(cContinue,"o") && strcmp(cContinue,"n"));
 
-    const int NMAX=10;
-    int nI,nJ;
-    printf("    I");
-    for(nJ=1;nJ<=NMAX;nJ++)
-        printf("%4d",nJ);
 
-    printf("\n");
-    printf("-------");
+    }while(cContinue[0]==cFinDeSaisie);
 
-    for(nJ=1;nJ<=NMAX;nJ++)
-        printf("-------");
 
-    printf("\n");
 
-    for(nI=1;nI<=NMAX;nI++){
-        printf("%4d",nI);
-        for(nJ=1;nJ<=NMAX;nJ++)
-            printf("%4d",nI*nJ);
 
-        printf("\n");
-
-    }
 
     return 0;
 }
