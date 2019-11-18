@@ -2,99 +2,59 @@
 #include <stdlib.h>
 #include <math.h>
 #define TAILLE 100
-//Les pointeurs
+//Les Typedef
 
 
+typedef struct tPoint{//Signature du typdef
 
-char *ctabCar(char cChaine[100]);
-int *ntabInt(int nEntier[100]);
-int *ntabInt2D(int nEntier[10][10]);
+    int nX;
+    int nY;
+}tPoint;//Declaration du nouveau type
+
+
+struct tPoint2{//Signature du typdef
+
+    int nX;
+    int nY;
+}tPoint2,*ptPoint;//Declaration du nouveau type
 
 
 
 int main()
 {
+    tPoint newPoint;
+    tPoint *pnewPoint=&newPoint;
+
+    newPoint.nX=0;
+    newPoint.nY=0;
+
+    pnewPoint->nX=10;
+    pnewPoint->nY=20;
+
+    //Formalisme du pointeur
+    (*pnewPoint).nX=50;
+    (*pnewPoint).nY=50;
 
 
-    /*char cSaisie[100]={"Votre Nom"}; //Declaration Tableau de caractère;
-    char *cNom;
+    //Initialisation
 
-    //Formalisme tableau
-    cNom=ctabCar(cSaisie);
-
-    printf("Votre Nom %s",cNom);*/
+    tPoint newPoint2={0,0};
 
 
+    struct tPoint2 tPoint3={0,0};
+    struct ptPoint;
 
+    ptPoint=&tPoint3;
 
-    //Tableau d'entiers
-    int nEntier[100]={0};
-    ntabInt(nEntier);
+    ptPoint->nX=100;
+    ptPoint->nY=100;
 
-    int nEntier2[10][10];
-    int *pInt=ntabInt2D(nEntier2);
-
-    int i;
-    int *p;
-    for(i=0;i<100;i++){
-
-        printf("%d",*(pInt)++);//Formalisme pointeur
-        p=pInt;
-    }
-
-    //*(pInt)++; //incrémentation du pointeur et donc de la référence.
-
-    //ou (*pInt)++ incrémentation de l'entier stocké
 
 
    return 0;
 }
 
 
-/* fonction retourne un pointeur de char*/
-
-char * ctabCar(char cChaine[100]){
-
-    printf("Entrez votre nom\n");
-    scanf("%s",cChaine);
-
-    return cChaine;
-
-}
-
-/* fonction retourne un pointeur de int*/
-int * ntabInt(int nEntier[100])
-{
-
-    int i;
-
-    //formatlisme pointeur
-    for(i=0;i<100;i++){
-        *(nEntier+i)=0;//nEntier[i]=0
-    }
-
-    return nEntier;
-}
-
-
-/* fonction retourne un pointeur de int, cast du tableau 2d en pointeur*/
-int * ntabInt2D(int nEntier[10][10]){
-
-
-    int i,j;
-
-    //formatlisme pointeur
-    for(i=0;i<10;i++){
-            for(j=0;j<10;j++){
-                *(*(nEntier+i)+j)=10;//nEntier[i][j]=10;
-
-            }
-
-    }
-
-    return (int*)nEntier;
-
-}
 
 
 
