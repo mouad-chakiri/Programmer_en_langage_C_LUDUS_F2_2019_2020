@@ -5,85 +5,96 @@
 //Les pointeurs
 
 
-int sommeEntiers(int, int);
-void somEntiers(int, int,int *);
-char * tabCar(char cChaine[100]);
-int * tabInt(int nEntier[100]);
+
+char *ctabCar(char cChaine[100]);
+int *ntabInt(int nEntier[100]);
+int *ntabInt2D(int nEntier[10][10]);
+
 
 
 int main()
 {
 
-    //Déclaration Pointeur
 
-    //Un pointeur pointe sur une ref mémoire
-    //Un pointeur lors de son initialisation doit avoir un référence NULL
+    /*char cSaisie[100]={"Votre Nom"}; //Declaration Tableau de caractère;
+    char *cNom;
 
-    /*int *pnPointeurEntier=NULL;
+    //Formalisme tableau
+    cNom=ctabCar(cSaisie);
 
-    //Pointeur pointe sur réference nEntier
-    int nEntier=10;
-
-    pnPointeurEntier=&nEntier;
-
-    *pnPointeurEntier=88;
-
-    nEntier=500;
-
-   // int **ppnEntier=&pnPointeurEntier;
-
-   int nEntier2=200;
-
-
-   nEntier=sommeEntiers(10,88);
-
-   printf("%d\n",nEntier);
-
-   int nResSomme=0;
-
-   somEntiers(56,12,&nResSomme);
-
-   printf("%d\n",nResSomme);
-
-    */
-
-   //char *pChar=NULL;
-
-   char cChaine[TAILLE]="nicolas";
-
-  // pChar=cChaine;
+    printf("Votre Nom %s",cNom);*/
 
 
 
 
+    //Tableau d'entiers
+    int nEntier[100]={0};
+    ntabInt(nEntier);
 
+    int nEntier2[10][10];
+    int *pInt=ntabInt2D(nEntier2);
 
+    int i;
+    int *p;
+    for(i=0;i<100;i++){
 
+        printf("%d",*(pInt)++);//Formalisme pointeur
+        p=pInt;
+    }
+
+    //*(pInt)++; //incrémentation du pointeur et donc de la référence.
+
+    //ou (*pInt)++ incrémentation de l'entier stocké
 
 
    return 0;
 }
 
-//fct sommeEntier
-int sommeEntiers(int nA, int nB){
 
+/* fonction retourne un pointeur de char*/
 
-    return nA+nB;
+char * ctabCar(char cChaine[100]){
 
-}
+    printf("Entrez votre nom\n");
+    scanf("%s",cChaine);
 
-
-
-void somEntiers(int nA, int nB,int *pnRes){
-
-    *pnRes=nA+nB;
-
+    return cChaine;
 
 }
 
+/* fonction retourne un pointeur de int*/
+int * ntabInt(int nEntier[100])
+{
+
+    int i;
+
+    //formatlisme pointeur
+    for(i=0;i<100;i++){
+        *(nEntier+i)=0;//nEntier[i]=0
+    }
+
+    return nEntier;
+}
 
 
+/* fonction retourne un pointeur de int, cast du tableau 2d en pointeur*/
+int * ntabInt2D(int nEntier[10][10]){
 
+
+    int i,j;
+
+    //formatlisme pointeur
+    for(i=0;i<10;i++){
+            for(j=0;j<10;j++){
+                *(*(nEntier+i)+j)=10;//nEntier[i][j]=10;
+
+            }
+
+    }
+
+    return (int*)nEntier;
+
+}
 
 
 
