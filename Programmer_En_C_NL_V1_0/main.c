@@ -4,60 +4,85 @@
 #define TAILLE 100
 //Les Typedef
 
-
 typedef struct tPoint{//Signature du typdef
 
     int nX;
     int nY;
-}tPoint;//Declaration du nouveau type
+
+}tPoint,*ptPoint;//Declaration du nouveau type
 
 
-struct tPoint2{//Signature du typdef
 
-    int nX;
-    int nY;
-}tPoint2,*ptPoint;//Declaration du nouveau type
+typedef struct tDroite{
+
+    tPoint tabPoint[TAILLE];
+
+}tDroite;
+
+
+//Les enumerations
+typedef  enum couleur{jaune,rouge,bleu,vert} couleur;
+//Commence a index 0
+// Si typedef  enum couleur{jaune=1,rouge=2,bleu,vert} couleur;
+//Alors index commence a 1
+
+
+typedef struct tInfoDroite{
+
+    char cNomDroite[100];
+    tDroite dr;
+    couleur coul;
+
+}tInfoDroite;
+
 
 
 
 int main()
 {
-    tPoint newPoint;
-    tPoint *pnewPoint=&newPoint;
-
-    newPoint.nX=0;
-    newPoint.nY=0;
-
-    pnewPoint->nX=10;
-    pnewPoint->nY=20;
-
-    //Formalisme du pointeur
-    (*pnewPoint).nX=50;
-    (*pnewPoint).nY=50;
+    //renvoie a la declaration de l'alias de la structure tPoint
+    ptPoint pPoint=NULL;//Cette declaration correspond à un pointeur.
 
 
-    //Initialisation
+    //Creation d'une varialbe de type tPoint
 
-    tPoint newPoint2={0,0};
+    tPoint pts={0,0}; //Initialisation des membres de la structure
+
+    pPoint=&pts;
+
+    printf("x:%d\n",pPoint->nX);
+    printf("y:%d\n",pPoint->nY);
 
 
-    struct tPoint2 tPoint3={0,0};
-    struct ptPoint;
+    int i=0;
+    tDroite dr;
 
-    ptPoint=&tPoint3;
+    for(i=0;i<TAILLE;i++){
 
-    ptPoint->nX=100;
-    ptPoint->nY=100;
+        dr.tabPoint[i]=pts;
+
+    }
+
+    tInfoDroite iDroite={"segment",{0,0,1,2},jaune};//Peut generer un warning car nous n'initialisons pas les 100 valeurs.
+    //Initilisation d'un membre de type tInfoDroite
+
+
+    for(i=0;i<TAILLE;i++){
+
+        printf("Nom de la droite : %s", iDroite.cNomDroite);
+        printf("x: %d", iDroite.dr.tabPoint[i].nX);
+        printf("y: %d", iDroite.dr.tabPoint[i].nY);
+        printf("y: %d", iDroite.coul);//Cela donne id(int) de la couleur
+
+    }
+
+
+
 
 
 
    return 0;
 }
-
-
-
-
-
 
 
 
