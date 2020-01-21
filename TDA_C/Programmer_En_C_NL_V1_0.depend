@@ -1,0 +1,50 @@
+# depslib dependency file v1.0
+1579532454 source:d:\projet_codeblocks\programmer_en_c_ludus_2019_2020\pile_c\main.c
+	<stdio.h>
+	<stdlib.h>
+	"pile.h"
+
+1579528739 source:d:\projet_codeblocks\programmer_en_c_ludus_2019_2020\pile_c\pile.c
+	"pile.h"
+
+1579528356 d:\projet_codeblocks\programmer_en_c_ludus_2019_2020\pile_c\pile.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1579597320 source:d:\projet_codeblocks\programmer_en_c_ludus_2019_2020\tda_c\pile.c
+	"pile.h"
+
+1579594142 d:\projet_codeblocks\programmer_en_c_ludus_2019_2020\tda_c\pile.h
+	<stdio.h>
+	<stdlib.h>
+
+1579605482 source:d:\projet_codeblocks\programmer_en_c_ludus_2019_2020\tda_c\main.c
+	<stdio.h>
+	<stdlib.h>
+	"pile.h"
+	"file.h"
+	"listeSchainee.h"
+	"listeDchainee.h"
+
+1579598100 source:d:\projet_codeblocks\programmer_en_c_ludus_2019_2020\tda_c\file.c
+	"file.h"
+
+1579597782 d:\projet_codeblocks\programmer_en_c_ludus_2019_2020\tda_c\file.h
+	<stdlib.h>
+	<stdio.h>
+
+1579537641 source:d:\projet_codeblocks\programmer_en_c_ludus_2019_2020\tda_c\listeschainee.c
+	"listeSchainee.h"
+
+1579537633 d:\projet_codeblocks\programmer_en_c_ludus_2019_2020\tda_c\listeschainee.h
+	<stdio.h>
+	<stdlib.h>
+
+1579604254 source:d:\projet_codeblocks\programmer_en_c_ludus_2019_2020\tda_c\listedchainee.c
+	"listeDchainee.h"
+	<stdlib.h>
+	<stdio.h>
+
+1579605346 d:\projet_codeblocks\programmer_en_c_ludus_2019_2020\tda_c\listedchainee.h
+

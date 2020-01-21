@@ -31,9 +31,21 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="file.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="file.h" />
+		<Unit filename="listeSchainee.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="listeSchainee.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="pile.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="pile.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />
