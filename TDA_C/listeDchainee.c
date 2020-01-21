@@ -146,7 +146,7 @@ int suppD(dl_Liste *liste, int pos){
 
         if(liste->taille == 0) return -1;
 
-            if(pos == 1){ /* suppresion de 1er élément */
+            if(pos == 1){ /* suppresion de 1er Ã©lÃ©ment */
 
                 supp_element = liste->debut;
 
@@ -158,7 +158,7 @@ int suppD(dl_Liste *liste, int pos){
                     liste->debut->precedent = NULL;
 
 
-           }else if(pos == liste->taille){ /* suppression du dernier élément */
+           }else if(pos == liste->taille){ /* suppression du dernier Ã©lÃ©ment */
 
                supp_element = liste->fin;
                liste->fin->precedent->suivant = NULL;
@@ -181,7 +181,7 @@ int suppD(dl_Liste *liste, int pos){
 return 0;
 }
 
-//Affiche Liste doublement chainee
+
 void detruire(dl_Liste *liste){
 
         while(liste->taille > 0)
@@ -189,7 +189,7 @@ void detruire(dl_Liste *liste){
 }
 
 
-//Affiche Inv Liste doublement chainee
+//Affiche Liste doublement chainee
 void afficheListeD(dl_Liste *liste){
     dl_Element *courant;
     courant = liste->debut;
@@ -201,7 +201,7 @@ void afficheListeD(dl_Liste *liste){
     printf("]\n");
 }
 
-
+//Affiche Inv Liste doublement chainee
 void affiche_invListeD(dl_Liste *liste){
 
     dl_Element *courant;
