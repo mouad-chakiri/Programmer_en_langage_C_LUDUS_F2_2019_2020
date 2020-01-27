@@ -11,6 +11,7 @@
 				<Option object_output="obj/Debug/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
+				<Option parameters="-t -w" />
 				<Compiler>
 					<Add option="-g" />
 					<Add directory="../../SDL2-devel-2.0.10-mingw/SDL2-2.0.10/i686-w64-mingw32/include/" />
@@ -18,7 +19,7 @@
 				<Linker>
 					<Add option="-lmingw32" />
 					<Add library="../../SDL2-devel-2.0.10-mingw/SDL2-2.0.10/i686-w64-mingw32/lib/libSDL2main.a" />
-					<Add library="../../SDL2-devel-2.0.10-mingw/SDL2-2.0.10/i686-w64-mingw32/lib/libSDL.dll.a" />
+					<Add library="../../SDL2-devel-2.0.10-mingw/SDL2-2.0.10/i686-w64-mingw32/lib/libSDL2.dll.a" />
 					<Add directory="../../SDL2-devel-2.0.10-mingw/SDL2-2.0.10/i686-w64-mingw32/lib/" />
 				</Linker>
 			</Target>
