@@ -5,9 +5,10 @@
 	<math.h>
 	<string.h>
 
-1580136407 source:d:\projet_codeblocks\programmer_en_c_ludus_2019_2020\programmeren_c_nl_v2_0\main.c
+1580210221 source:d:\projet_codeblocks\programmer_en_c_ludus_2019_2020\programmeren_c_nl_v2_0\main.c
 	<stdio.h>
 	"SDL2/SDL.h"
+	<math.h>
 
 1564029277 d:\projet_codeblocks\sdl2-devel-2.0.10-mingw\sdl2-2.0.10\i686-w64-mingw32\include\\sdl2\sdl.h
 	"SDL_main.h"

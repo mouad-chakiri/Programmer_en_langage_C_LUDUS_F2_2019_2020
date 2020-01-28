@@ -1,5 +1,6 @@
 #include<stdio.h>
 #include "SDL2/SDL.h"
+#include <math.h>
 
 int main(int argc, char *argv[]){
 
@@ -39,6 +40,95 @@ int main(int argc, char *argv[]){
         SDL_RenderPresent(pRenderer);
 
 
+        //Triangle
+        SDL_SetRenderDrawColor(pRenderer, 0, 0, 0, SDL_ALPHA_OPAQUE);
+
+        SDL_RenderDrawLine(pRenderer, 320, 200, 300, 240);
+        SDL_RenderDrawLine(pRenderer, 300, 240, 340, 240);
+        SDL_RenderDrawLine(pRenderer, 340, 240, 320, 200);
+        SDL_RenderPresent(pRenderer);
+
+        SDL_Delay(2000);
+        SDL_SetRenderDrawColor(pRenderer, 255, 0, 0, SDL_ALPHA_OPAQUE);
+        SDL_RenderClear(pRenderer);
+
+        //Rectangle vide
+        SDL_SetRenderDrawColor(pRenderer, 0, 0, 0, SDL_ALPHA_OPAQUE);
+        SDL_Rect rectangle={0,0,250,250};
+        SDL_RenderDrawRect(pRenderer,&rectangle);
+
+        SDL_RenderPresent(pRenderer);
+
+
+        //Pause et efface ecran
+        SDL_Delay(2000);
+        SDL_SetRenderDrawColor(pRenderer, 255, 0, 0, SDL_ALPHA_OPAQUE);
+        SDL_RenderClear(pRenderer);
+
+        //Rectangle plein
+        SDL_SetRenderDrawColor(pRenderer, 0, 0, 0, SDL_ALPHA_OPAQUE);
+        rectangle.h=250;
+        rectangle.w=250;
+        rectangle.x=100;
+        rectangle.y=100;
+        SDL_RenderFillRect(pRenderer,&rectangle);
+
+        SDL_RenderPresent(pRenderer);
+
+
+        //Pause et efface ecran
+        SDL_Delay(2000);
+        SDL_SetRenderDrawColor(pRenderer, 255, 0, 0, SDL_ALPHA_OPAQUE);
+        SDL_RenderClear(pRenderer);
+
+
+        //Cercle
+        SDL_SetRenderDrawColor(pRenderer, 0, 0, 0, SDL_ALPHA_OPAQUE);
+        float angle;
+        int nX=0;
+        int nY=0;
+        int nCentreX=100;
+        int nCentreY=100;
+        int nRadius=8;
+
+
+            for ( angle= 0.0; angle<360; angle++){
+                nX = nCentreX+(nRadius * cos(angle));
+                nY = nCentreY+(nRadius * sin(angle));
+                SDL_RenderDrawPoint(pRenderer, nX, nY);
+            }
+
+
+         SDL_RenderPresent(pRenderer);
+
+        //Pause et efface ecran
+        SDL_Delay(2000);
+        SDL_SetRenderDrawColor(pRenderer, 255, 0, 0, SDL_ALPHA_OPAQUE);
+        SDL_RenderClear(pRenderer);
+
+
+        //Cercle
+        SDL_SetRenderDrawColor(pRenderer, 0, 0, 0, SDL_ALPHA_OPAQUE);
+
+        int nRadiusMin;
+        nX=0;
+        nY=0;
+        nCentreX=100;
+        nCentreY=100;
+        nRadius=8;
+
+        for (nRadiusMin = 0; nRadiusMin<=nRadius; nRadiusMin++){
+
+            for ( angle= 0.0; angle<360; angle++){
+                nX = nCentreX+(nRadiusMin * cos(angle));
+                nY = nCentreY+(nRadiusMin * sin(angle));
+                SDL_RenderDrawPoint(pRenderer, nX, nY);
+            }
+        }
+
+         SDL_RenderPresent(pRenderer);
+
+
         //Attente et fin du programme
         SDL_Delay(10000);
 
@@ -61,6 +151,8 @@ int main(int argc, char *argv[]){
 
 return 0;
 }
+
+
 
 
 
