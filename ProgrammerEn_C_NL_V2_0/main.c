@@ -1,6 +1,8 @@
 #include<stdio.h>
 #include "SDL2/SDL.h"
 #include <math.h>
+#define PI 3.14159265
+
 
 int main(int argc, char *argv[]){
 
@@ -89,12 +91,12 @@ int main(int argc, char *argv[]){
         int nY=0;
         int nCentreX=100;
         int nCentreY=100;
-        int nRadius=8;
+        int nRadius=50;
 
 
             for ( angle= 0.0; angle<360; angle++){
-                nX = nCentreX+(nRadius * cos(angle));
-                nY = nCentreY+(nRadius * sin(angle));
+                nX = nCentreX+(nRadius * cos(angle*PI/180));//En Cos(t) t=>radian
+                nY = nCentreY+(nRadius * sin(angle*PI/180));//En Sin(t) t=>radian
                 SDL_RenderDrawPoint(pRenderer, nX, nY);
             }
 
@@ -115,13 +117,13 @@ int main(int argc, char *argv[]){
         nY=0;
         nCentreX=100;
         nCentreY=100;
-        nRadius=8;
+        nRadius=20;
 
         for (nRadiusMin = 0; nRadiusMin<=nRadius; nRadiusMin++){
 
             for ( angle= 0.0; angle<360; angle++){
-                nX = nCentreX+(nRadiusMin * cos(angle));
-                nY = nCentreY+(nRadiusMin * sin(angle));
+                nX = nCentreX+(nRadiusMin * cos(angle*PI/180));
+                nY = nCentreY+(nRadiusMin * sin(angle*PI/180));
                 SDL_RenderDrawPoint(pRenderer, nX, nY);
             }
         }
